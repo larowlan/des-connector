@@ -236,7 +236,7 @@ class Client implements ClientInterface
                     $params['hosts'][$key] =
                         ((isset($url_parsed['scheme'])) ? $url_parsed['scheme'] . '://' : '')
                         . ((isset($url_parsed['user'])) ? $url_parsed['user'] .
-                            ((isset($url_parsed['pass'])) ? ':' . $url_parsed['pass'] : '') . '@' : '')
+                            ((isset($url_parsed['pass'])) ? ':' . urlencode($url_parsed['pass']) : '') . '@' : '')
                         . ((isset($url_parsed['host'])) ? $url_parsed['host'] : '')
                         . ((isset($url_parsed['port'])) ? ':' . $url_parsed['port'] : '')
                         . ((isset($url_parsed['path'])) ? $url_parsed['path'] : '')
